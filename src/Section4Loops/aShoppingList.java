@@ -4,20 +4,38 @@ import java.util.Scanner;
 
 public class aShoppingList {
     public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);
-        String str = scan.nextLine();
-        String r = "hi";
+        Scanner input = new Scanner(System.in);
+        String name = "";
+        String answer = "";
+        String ItemPrice = "";
+        String itemquantity = "";
+        String shoppingList = "";
+        double totalcost=0;
 
-        //WRITE YOUR CODE BELOW
-        int count = 0;
-        String s = "";
-        for (int i = 0; i < str.length()-1; i++) {
-            s = str.substring(i, i+2);
-            if(s.contains(r)){
-                count+=1;
+        int itemNo=0;
+
+        while (true) {
+            System.out.println("Enter the name of item "+(itemNo+1));
+
+            name = input.nextLine();
+            System.out.println("Enter the price of the "+name);
+
+            ItemPrice=input.nextLine();
+            System.out.println("How many "+name+" will you buy?");
+            itemquantity=input.nextLine();
+
+            System.out.println("Do you want to add more items to the shopping list?");
+            answer = input.nextLine();
+            totalcost+=Double.parseDouble(itemquantity)*Double.parseDouble(ItemPrice);
+            shoppingList+=name+" x "+itemquantity+" - $"+(Double.parseDouble(itemquantity)*Double.parseDouble(ItemPrice));
+            if (answer.equals("no")) {
+                break;
             }
-        }
-        System.out.println(count);
+            shoppingList+="\n";
 
+            itemNo++;
+        }
+        System.out.println("SHOPPING LIST:\n"+shoppingList+"\nTotal cost: $"+totalcost);
     }
 }
+
