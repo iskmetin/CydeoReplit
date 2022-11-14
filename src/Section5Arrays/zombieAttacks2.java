@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 public class zombieAttacks2 {
     public static void main(String[] args) {
+        //
         Scanner input = new Scanner(System.in);
         int[] inhabitants = {input.nextInt(), input.nextInt(), input.nextInt(), input.nextInt(), input.nextInt(), input.nextInt(), input.nextInt(), input.nextInt()};
 
@@ -26,7 +27,7 @@ public class zombieAttacks2 {
 
                         inhabitants[i - 1] = inhabitants[i - 1] / 2;
                         inhabitants[i + 1] = inhabitants[i + 1] / 2;
-                        if(inhabitants[i + 1]==0){
+                        if (inhabitants[i + 1] == 0) {
                             i++;
                         }
                     }

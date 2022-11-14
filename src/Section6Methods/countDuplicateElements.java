@@ -4,24 +4,26 @@ import java.util.Scanner;
 
 public class countDuplicateElements {
     public static int getDup(String[] arr) {
-        int freq=0;
+
+        int count = 0;
         for (int i = 0; i < arr.length; i++) {
-            for (int j = 0; j < arr.length; j++) {
-                if(arr[i].equals(arr[j])){
-                    freq++;
-                }
-
+            if (frequency(arr, arr[i]) > 1) {
+                count++;
             }
-            if (freq>1){
-                return freq;
-
-            }
-
-
         }
-        return freq;
-
+        return count;
     }
+
+    public static int frequency(String[] arr, String str) {
+        int count = 0;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i].equals(str)) {
+                count++;
+            }
+        }
+        return count;
+    }
+
 
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
