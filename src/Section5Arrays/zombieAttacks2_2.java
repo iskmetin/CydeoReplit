@@ -19,7 +19,7 @@ public class zombieAttacks2_2 {
             System.out.println("---- EXTINCT ----");
         else {
             int day = 0;
-            while (!Arrays.equals(inhabitants, extinction)) {
+            while (!Arrays.equals(inhabitants, new int[8])) {
                 int[] temp = new int[inhabitants.length];
                 System.arraycopy(inhabitants, 0, temp, 0, inhabitants.length); // copy inhabitants into temp
                 for (int i = 0; i < inhabitants.length; i++) {
